@@ -4,7 +4,7 @@
       <BaseAvatar :avatar="user.avatarUrl" />
       <h2>{{ user.name }}</h2>
       <h2><a class="repo-link" :href="repo.node.url">{{ repo.node.name }}</a></h2>
-      <span>{{ repo.node.description }}</span>
+      <span>{{ repo.node.description ? repo.node.description : 'No Description Available' }}</span>
     </div>
   </div>
 </template>
@@ -61,9 +61,6 @@ export default {
             query: `
               query {
                 viewer {
-                  login
-                  name
-                  avatarUrl
                   repositories(first: 50) {
                     edges {
                       node {
@@ -88,12 +85,6 @@ export default {
   created() {
     this.getUser();
     this.getRepos();
-  },
-  mounted() {
-    console.log(
-      "Authorization:",
-      `bearer ${process.env.VUE_APP_GH_PERSONAL_TOKEN}`
-    );
   }
 };
 </script>
