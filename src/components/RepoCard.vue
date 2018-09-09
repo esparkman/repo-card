@@ -1,10 +1,13 @@
 <template>
-  <div class="cards">
-    <div class="repo-card" v-for="(repo, index) in repos" :key="index.id">
-      <BaseAvatar :avatar="user.avatarUrl" />
-      <h2>{{ user.name }}</h2>
-      <h2><a class="repo-link" :href="repo.node.url">{{ repo.node.name }}</a></h2>
-      <span>{{ repo.node.description ? repo.node.description : 'No Description Available' }}</span>
+  <div>
+    <h1>{{ msg  }}</h1>
+    <div class="cards">
+      <div class="repo-card" v-for="(repo, index) in repos" :key="index.id">
+        <BaseAvatar :avatar="user.avatarUrl" />
+        <h2>{{ user.name }}</h2>
+        <h2><a class="repo-link" :href="repo.node.url">{{ repo.node.name }}</a></h2>
+        <span>{{ repo.node.description ? repo.node.description : 'No Description Available' }}</span>
+      </div>
     </div>
   </div>
 </template>

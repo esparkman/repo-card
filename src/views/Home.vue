@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <RepoCard msg="Welcome to Your Vue.js App"/>
+    <RepoCard msg="Your Github Repos"/>
   </div>
 </template>
 
