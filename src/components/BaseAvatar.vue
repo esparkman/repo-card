@@ -15,5 +15,6 @@ export default {
 <style scoped>
 img {
   border-radius: 50%;
+  border: 4px solid #65b787;
 }
 </style>
